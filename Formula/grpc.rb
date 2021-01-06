@@ -65,7 +65,7 @@ class Grpc < Formula
       system "cmake", *args
       system "make", "grpc_cli"
       bin.install "grpc_cli"
-      lib.install Dir["libgrpc++_test_config*.{dylib,so}.*"]
+      lib.install Dir["libgrpc++_test_config.*.{dylib,so}"]
     end
   end
 
