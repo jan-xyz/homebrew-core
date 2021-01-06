@@ -80,6 +80,6 @@ class Grpc < Formula
     EOS
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lgrpc", "-o", "test"
     system "./test"
-    system "grpc_cli", "help", "ls"
+    assert_match "Received an error when querying services endpoint." shell_output("grpc_cli ls localhost:#{free_port}", 1)
   end
 end
